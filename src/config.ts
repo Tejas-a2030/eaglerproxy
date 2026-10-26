@@ -21,8 +21,8 @@ export const config: Config = {
       originBlacklist: null,
     },
     server: {
-      host: process.env.TARGET_IP || "hough.aternos.me",
-      port: Number(process.env.TARGET_PORT) || 39030,
+      host: "hough.aternos.me", // Replace with your exact Aternos IP
+      port: 39030,                  // Replace with your exact Aternos Port
     },
     tls: undefined,
   },

@@ -11,24 +11,18 @@ export const config: Config = {
   adapter: {
     name: "EaglerProxy",
     bindHost: "0.0.0.0",
-    bindPort: 8080,
+    bindPort: Number(process.env.PORT) || 8080,
     maxConcurrentClients: 20,
     skinUrlWhitelist: undefined,
-    motd: true
-      ? "FORWARD"
-      : {
-          iconURL: "logo.png",
-          l1: "yes",
-          l2: "no",
-        },
+    motd: "FORWARD",
     origins: {
       allowOfflineDownloads: true,
       originWhitelist: null,
       originBlacklist: null,
     },
     server: {
-      host: "no",
-      port: 46625,
+      host: process.env.TARGET_IP || "hough.aternos.me",
+      port: Number(process.env.TARGET_PORT) || 39030,
     },
     tls: undefined,
   },

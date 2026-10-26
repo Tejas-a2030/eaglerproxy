@@ -1,6 +1,3 @@
-// This folder contains options for both the bridge and networking adapter.
-// Environment files and .env files are available here. Set the value of any config option to process.env.<ENV name>
-
 import { Config } from "./launcher_types.js";
 
 export const config: Config = {
@@ -21,8 +18,8 @@ export const config: Config = {
       originBlacklist: null,
     },
     server: {
-      host: "hough.aternos.me", // Replace with your exact Aternos IP
-      port: 39030,                  // Replace with your exact Aternos Port
+      host: process.env.TARGET_IP || "hough.aternos.me",
+      port: Number(process.env.TARGET_PORT) || 39030,
     },
     tls: undefined,
   },
